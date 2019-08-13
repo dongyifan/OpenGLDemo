@@ -57,7 +57,16 @@ int main(int argc, const char * argv[]) {
     glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &nrAttributes);
     std::cout << "Maximum nr of vertex attributes supported: " << nrAttributes << std::endl;
     
-    printf("%s\n", glGetString(GL_VERSION));
+    printf("gl_version: %s\n", glGetString(GL_VERSION));
+    printf("gl_render: %s\n", glGetString(GL_RENDERER));
+    
+//    int NumberOfExtensions;
+//    glGetIntegerv(GL_NUM_EXTENSIONS, &NumberOfExtensions);
+//    for(int i=0; i<NumberOfExtensions; i++) {
+//        const GLubyte *ccc=glGetStringi(GL_EXTENSIONS, i);
+//        std::cout << ccc << std::endl;
+//    }
+//
     glViewport(0, 0, 800, 600);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
     
@@ -94,6 +103,7 @@ int main(int argc, const char * argv[]) {
 //        float greenValue = std::sin(timeValue) / 2.0f + 0.5f;
 //        int vertexColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
 //        glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
+        ourShader.setFloat("offset", 0.3);
         ourShader.use();
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 3);
