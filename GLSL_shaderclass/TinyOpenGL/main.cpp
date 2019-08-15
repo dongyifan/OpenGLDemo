@@ -7,7 +7,7 @@
 //
 
 #include <iostream>
-#define GLFW_INCLUDE_GLCOREARB
+#include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <cmath>
 #include "shader.h"
@@ -52,6 +52,8 @@ int main(int argc, const char * argv[]) {
         return -1;
     }
     glfwMakeContextCurrent(window);
+    // Initialize GLEW
+    glewExperimental = GL_TRUE; glewInit();
     
     int nrAttributes;
     glGetIntegerv(GL_MAX_VERTEX_ATTRIBS, &nrAttributes);

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		281A2BE32301767F0063D35A /* vertex.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = 281A2BE1230175180063D35A /* vertex.glsl */; };
 		281A2BE4230176870063D35A /* fragment.glsl in CopyFiles */ = {isa = PBXBuildFile; fileRef = 281A2BE2230175330063D35A /* fragment.glsl */; };
+		281A2BE623052FEC0063D35A /* libGLEW.2.1.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 281A2BE523052FEC0063D35A /* libGLEW.2.1.0.dylib */; };
 		28CDF2BF22C5AFA200FC222B /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 28CDF2BE22C5AFA200FC222B /* libglfw.3.3.dylib */; };
 		28F961411B3D21DB0021F8BA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28F961401B3D21DB0021F8BA /* main.cpp */; };
 		28F961481B3D25D20021F8BA /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F961471B3D25D20021F8BA /* OpenGL.framework */; };
@@ -32,6 +33,7 @@
 		281A2BDD2301150A0063D35A /* shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shader.h; sourceTree = "<group>"; };
 		281A2BE1230175180063D35A /* vertex.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = vertex.glsl; sourceTree = "<group>"; usesTabs = 0; };
 		281A2BE2230175330063D35A /* fragment.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = fragment.glsl; sourceTree = "<group>"; };
+		281A2BE523052FEC0063D35A /* libGLEW.2.1.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.1.0.dylib; path = ../../../../../../usr/local/Cellar/glew/2.1.0/lib/libGLEW.2.1.0.dylib; sourceTree = "<group>"; };
 		28CDF2BC22C5ADCD00FC222B /* libglfw.3.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.2.dylib; path = ../../../../../usr/local/Cellar/glfw/3.2.1/lib/libglfw.3.2.dylib; sourceTree = "<group>"; };
 		28CDF2BE22C5AFA200FC222B /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../../usr/local/Cellar/glfw/3.3/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
 		28F9613D1B3D21DB0021F8BA /* TinyOpenGL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TinyOpenGL; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				281A2BE623052FEC0063D35A /* libGLEW.2.1.0.dylib in Frameworks */,
 				28CDF2BF22C5AFA200FC222B /* libglfw.3.3.dylib in Frameworks */,
 				28F961481B3D25D20021F8BA /* OpenGL.framework in Frameworks */,
 			);
@@ -55,6 +58,7 @@
 		28CDF2BB22C5ADCC00FC222B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				281A2BE523052FEC0063D35A /* libGLEW.2.1.0.dylib */,
 				28CDF2BE22C5AFA200FC222B /* libglfw.3.3.dylib */,
 				28CDF2BC22C5ADCD00FC222B /* libglfw.3.2.dylib */,
 			);
@@ -262,7 +266,10 @@
 					"$(inherited)",
 				);
 				HEADER_SEARCH_PATHS = /usr/local/include;
-				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					/usr/local/Cellar/glew/2.1.0/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -272,7 +279,10 @@
 			buildSettings = {
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				HEADER_SEARCH_PATHS = /usr/local/include;
-				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/lib,
+					/usr/local/Cellar/glew/2.1.0/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
