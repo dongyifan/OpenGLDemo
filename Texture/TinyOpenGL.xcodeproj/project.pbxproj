@@ -15,6 +15,7 @@
 		28CDF2BF22C5AFA200FC222B /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 28CDF2BE22C5AFA200FC222B /* libglfw.3.3.dylib */; };
 		28F961411B3D21DB0021F8BA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28F961401B3D21DB0021F8BA /* main.cpp */; };
 		28F961481B3D25D20021F8BA /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F961471B3D25D20021F8BA /* OpenGL.framework */; };
+		DDC4FC002307A008004FD056 /* awesomeface.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = DDC4FBFF23079FF5004FD056 /* awesomeface.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,6 +25,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				DDC4FC002307A008004FD056 /* awesomeface.png in CopyFiles */,
 				281A2BED23068FFE0063D35A /* container.jpg in CopyFiles */,
 				281A2BE4230176870063D35A /* fragment.glsl in CopyFiles */,
 				281A2BE32301767F0063D35A /* vertex.glsl in CopyFiles */,
@@ -45,6 +47,7 @@
 		28F9613D1B3D21DB0021F8BA /* TinyOpenGL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TinyOpenGL; sourceTree = BUILT_PRODUCTS_DIR; };
 		28F961401B3D21DB0021F8BA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		28F961471B3D25D20021F8BA /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		DDC4FBFF23079FF5004FD056 /* awesomeface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = awesomeface.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,7 @@
 		28F9613F1B3D21DB0021F8BA /* TinyOpenGL */ = {
 			isa = PBXGroup;
 			children = (
+				DDC4FBFF23079FF5004FD056 /* awesomeface.png */,
 				281A2BEC230560DA0063D35A /* container.jpg */,
 				281A2BE923055EAA0063D35A /* stb_image.h */,
 				28F961401B3D21DB0021F8BA /* main.cpp */,
