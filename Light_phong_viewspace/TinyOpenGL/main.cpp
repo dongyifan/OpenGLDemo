@@ -212,8 +212,8 @@ int main(int argc, const char * argv[]) {
 //        lightPos.x = 2.0f * sin(currentFrame);
 //        lightPos.z = 2.0f * cos(currentFrame);
         
-        lightPos.x = 1.0f + sin(glfwGetTime()) * 2.0f;
-        lightPos.y = sin(glfwGetTime() / 2.0f) * 1.0f;
+        lightPos.x = sin(glfwGetTime()) * 2.0f;
+        lightPos.z = cos(glfwGetTime()) * 2.0f;
         
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -229,7 +229,6 @@ int main(int argc, const char * argv[]) {
         model = glm::scale(model, glm::vec3(2.0f, 2.0f, 2.0f));
         lightingShader.setMat4("model", model);
         lightingShader.setVec3("lightPos", lightPos);
-        lightingShader.setVec3("viewPos", camera.Position);
         
         glBindVertexArray(cubeVAO);
         glDrawArrays(GL_TRIANGLES, 0, 36);
