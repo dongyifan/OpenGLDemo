@@ -25,7 +25,7 @@ int screenWidth = 800;
 int screenHeight = 600;
 
 
-Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
+Camera camera(glm::vec3(0.0f, 0.0f, 6.0f));
 
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
@@ -33,7 +33,7 @@ float lastFrame = 0.0f;
 float lastX = screenWidth / 2, lastY = screenHeight / 2;
 bool firstMouse = true;
 
-glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
+glm::vec3 lightPos(1.2f, 0.0f, 2.0f);
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
     glViewport(0, 0, width, height);
@@ -209,6 +209,11 @@ int main(int argc, const char * argv[]) {
 //        auto model = glm::mat4(1.0f);
 //        model = glm::rotate(model, (float)glfwGetTime() * glm::radians(50.0f), glm::vec3(0.5f, 1.0f, 0.0f));
 //        ourShader.setMat4("model", model);
+//        lightPos.x = 2.0f * sin(currentFrame);
+//        lightPos.z = 2.0f * cos(currentFrame);
+        
+        lightPos.x = 1.0f + sin(glfwGetTime()) * 2.0f;
+        lightPos.y = sin(glfwGetTime() / 2.0f) * 1.0f;
         
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
