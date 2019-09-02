@@ -52,13 +52,12 @@ void main()
     float theta = dot(lightDir, normalize(-light.direction));
     float epsilon = light.cutOff - light.outerCutOff;
     float intensity = clamp((theta - light.outerCutOff) / epsilon, 0.0, 1.0);
-    
     diffuse *= intensity;
     specular *= intensity;
     
     float distance = length(light.position - FragPos);
     float attenuation = 1.0 / (light.constant + light.linear * distance + light.quadratic * (distance * distance));
-    //        ambient *= attenuation; // remove attenuation from ambient, as otherwise at large distances the light would be darker inside than outside the spotlight due the ambient term in the else branche
+    ambient *= attenuation;
     diffuse *= attenuation;
     specular *= attenuation;
     vec3 result = ambient + diffuse + specular;
